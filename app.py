@@ -8,7 +8,7 @@ from user import *
 
 app = Flask(__name__)
 
-f = open("key.txt", 'r')
+f = open("./key.txt", 'r')
 key = f.readline()
 f.close()
 
