@@ -1,0 +1,96 @@
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{ messages[-1] }}")
+        </script>
+    {% endif %}
+{% endwith %}
+<html>
+    <head>
+        <link rel="stylesheet" href="static\css\my-page.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    </head>
+    <body>
+    <div id="top-wrapper">
+        <div id="title">
+            <span id="KNUBS">KNUBS</span>
+            <span id="사연함">사연함</span>
+        </div>
+        <div id="menu">
+            <span class="menu-text other-menu" id="letter-box" onclick="location.href='/'">사연함</span>
+            <span class="menu-text" id="my-page">
+                마이 페이지
+                <hr id="current-menu-bar">
+            </span>
+        </div>
+{#        <hr id="current-menu-bar">#}
+    </div>
+
+    <div id="bottom-wrapper">
+        <div class="member-block">
+            <div class="heart-icon-wrapper">
+                <img src="static/image/heart_front_color.png" class="heart-icon">
+            </div>
+
+            <div class="member-info-wrapper">
+                <div class="member-name-wrapper member-info">
+                    <div class="member-info-category">
+                        이름
+                    </div>
+                    <div class="member-info-text">
+                        {{ name }}
+                    </div>
+                </div>
+                <div class="member-studentId-wrapper member-info">
+                    <div class="member-info-category">
+                        학번
+                    </div>
+                    <div class="member-info-text">
+                        {{ studentId }}
+                    </div>
+                </div>
+                <div class="member-letter-num-wrapper member-info">
+                    <div class="member-info-category">
+                        사연
+                    </div>
+                    <div class="member-info-text">
+                        {{ letterNum }}개
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-button-wrapper">
+                <div class="button-wrapper" onclick="
+                if (confirm('로그아웃 하시겠습니까?')) {
+                    location.href='/logout';
+                }
+                ">
+                    <div class="button">
+                        로그아웃
+                    </div>
+                </div>
+                <br>
+                <div class="button-wrapper" onclick="
+                if (confirm('정말 탈퇴하시겠습니까?')) {
+                    location.href='/cancel-account';
+                }
+                ">
+                    <div class="button">
+                        탈퇴하기
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <div onclick="location.href='/write'" id="write-button">
+            <div id="plus-text">
+                +
+            </div>
+        </div>
+
+    </body>
+</html>

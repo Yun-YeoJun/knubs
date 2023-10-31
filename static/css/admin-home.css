@@ -1,0 +1,167 @@
+body {
+    font-family: 'Inter', sans-serif;
+    padding-top: 400px;
+    margin: 0px;
+    background-color: #f6f7f9;
+}
+
+#title {
+    font-size: 66px;
+    font-weight: bold;
+    padding-top: 125px;
+    margin-left: 32px;
+}
+
+#KNUBS {
+    color: #0080dc;
+}
+
+#사연함 {
+    color: #262626;
+}
+
+
+
+#current-menu-bar {
+    position: absolute;
+    background-color: #262626;
+    height: 5px;
+    border: 0px;
+    width: 207.5px;
+    margin-left: 32px;
+    z-index: 200;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#top-wrapper {
+    margin: 0px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 5px solid #e8e9eb;
+}
+
+#menu {
+    margin-top: 93px;
+    margin-left: 79px;
+    /* margin-bottom: 32px; */
+    padding-bottom: 32px;
+}
+
+#letter-box {
+    color: #262626;
+}
+
+/*my-page {*/
+/*    margin-left: 129px;*/
+/*    color: #9a9b9f;*/
+/*}*/
+
+/*#user-list {*/
+/*    margin-left: 129px;*/
+/*    color: #9a9b9f;*/
+/*}*/
+
+.other-menu {
+    margin-left: 129px;
+    color: #9a9b9f;
+}
+
+.menu-text {
+    display: inline-block;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    /*letter-spacing: 0%;*/
+}
+
+#bottom-wrapper {
+    margin-top: 58.5px;
+    margin-bottom: 270px;
+}
+
+.letter-block {
+    background-color: #FFFFFF;
+    margin-left: 31px;
+    margin-right: 31px;
+    height: 369px;
+    margin-bottom: 31px;
+    border-radius: 25px;
+}
+
+.letter-icon-wrapper {
+    display: inline-block;
+}
+
+.letter-icon {
+    margin-top: 63px;
+    margin-left: 80px;
+    display: inline-block;
+}
+
+.letter-block-top-text-wrapper {
+    margin-left: 35px;
+    margin-top: 63px;
+    display: inline-block;
+    position: absolute;
+}
+
+.music {
+    font-size: 32px;
+    font-weight: 600;
+    color: #262626;
+}
+
+.date {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #d1d1d1;
+}
+
+.align-right-wrapper {
+    display: flex;
+    justify-content: right;
+}
+
+.letter-block-bottom-text-wrapper {
+    margin-top: 72px;
+    margin-right: 64px;
+}
+
+.letter-title {
+    color: #0080dc;
+    font-size: 53px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.letter-writer {
+    color: #bebebf;
+    font-size: 29px;
+    font-weight: 400;
+    margin-top: 12px;
+    text-align: right;
+}
+
+#write-button {
+    background-color: #0080DC;
+    position: fixed;
+    width: 164px;
+    height: 164px;
+    bottom: 79px;
+    right: 75px;
+    border-radius: 50%;
+    font-size: 110px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 2px 2px 1px #999;
+}
+
+#plus-text {
+    padding-top: 7px;
+}

@@ -1,0 +1,59 @@
+
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{ messages[-1] }}")
+        </script>
+    {% endif %}
+{% endwith %}
+    <div id="title">
+        <div id="title-top">
+            KNUBS
+        </div>
+        <div id="title-bottom">
+            사연함
+        </div>
+    </div>
+    <form method="post">
+    <div id="login-box">
+        <div id="id" class="login-input-wrapper">
+            <input class="login-input" placeholder="아이디" name="userId">
+        </div>
+        <hr id="login-line">
+        <div id="password" class="login-input-wrapper">
+            <input type="password" class="login-input" placeholder="비밀번호" name="password">
+        </div>
+    </div>
+    <div id="login-button-wrapper">
+        <button id="login-button">
+            로그인
+        </button>
+    </div>
+    <div id="login-menu">
+        <div id="find-id" class="menu-text-wrapper">
+            <a class="menu-text">
+                아이디 찾기
+            </a>
+        </div>
+        <div id="find-password" class="menu-text-wrapper">
+            <a class="menu-text">
+                비밀번호 찾기
+            </a>
+        </div>
+        <div id="sign-up" class="menu-text-wrapper">
+            <a class="menu-text" href="/sign-up">
+                회원가입
+            </a>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

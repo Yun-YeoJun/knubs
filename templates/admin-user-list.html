@@ -1,0 +1,90 @@
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{ messages[-1] }}")
+        </script>
+    {% endif %}
+{% endwith %}
+<html>
+    <head>
+        <link rel="stylesheet" href="static\css\admin-user-list.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    </head>
+    <body>
+    <div id="top-wrapper">
+        <div id="title">
+            <span id="KNUBS">KNUBS</span>
+            <span id="사연함">사연함</span>
+        </div>
+        <div id="menu">
+            <span class="menu-text other-menu" id="letter-box" onclick="location.href='/'">사연함</span>
+            <span class="menu-text other-menu" id="my-page" onclick="location.href='/my-page'">
+                마이 페이지
+            </span>
+            <span class="menu-text" id="user-list">
+                회원 목록
+                <hr id="current-menu-bar">
+            </span>
+
+        </div>
+{#        <hr id="current-menu-bar">#}
+    </div>
+
+    <div id="bottom-wrapper">
+
+        {% for user in users %}
+            <div class="member-block">
+                <div class="heart-icon-wrapper">
+                    <img src="static/image/heart_front_color.png" class="heart-icon">
+                </div>
+
+                <div class="member-info-wrapper">
+                    <div class="member-name-wrapper member-info">
+                        <div class="member-info-category">
+                            이름
+                        </div>
+                        <div class="member-info-text">
+                            {{ user[3] }}
+                        </div>
+                    </div>
+                    <div class="member-studentId-wrapper member-info">
+                        <div class="member-info-category">
+                            학번
+                        </div>
+                        <div class="member-info-text">
+                            {{ user[6] }}
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <div class="member-info-category">
+                            ID
+                        </div>
+                        <div class="member-info-text">
+                            {{ user[1] }}
+                        </div>
+                    </div>
+                </div>
+                <div class="member-button-wrapper">
+                    <div class="button-wrapper" onclick="
+                    if (confirm('정말 탈퇴시키시겠습니까?')) {
+                        location.href='/cancel-member-account?user-id={{ user[1] }}';
+                    }">
+                        <div class="button">
+                            탈퇴
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+        <div onclick="location.href='/write'" id="write-button">
+            <div id="plus-text">
+                +
+            </div>
+        </div>
+
+    </body>
+</html>

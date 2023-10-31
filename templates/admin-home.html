@@ -1,0 +1,69 @@
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{ messages[-1] }}")
+        </script>
+    {% endif %}
+{% endwith %}
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="static\css\home.css"> -->
+        <link rel="stylesheet" href="static\css\admin-home.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    </head>
+    <body>
+    <div id="top-wrapper">
+        <div id="title">
+            <span id="KNUBS">KNUBS</span>
+            <span id="사연함">사연함</span>
+        </div>
+        <div id="menu">
+            <span class="menu-text" id="letter-box">사연함</span>
+            <span class="menu-text other-menu" id="my-page" onclick="location.href='/my-page'">마이 페이지</span>
+            <span class="menu-text other-menu" id="user-list" onclick="location.href='/user-list'">회원 목록</span>
+        </div>
+        <hr id="current-menu-bar">
+    </div>
+
+    <div id="bottom-wrapper">
+
+    {% for letter in letters %}
+        <div class="letter-block" onclick="location.href='/letter?id={{ letter[0] }}'">
+            <div class="letter-icon-wrapper">
+                <img src="static/image/letter_icon.png" class="letter-icon">
+            </div>
+
+            <div class="letter-block-top-text-wrapper">
+                <div class="music">
+                    {{ letter[5] }} - {{ letter[4] }}
+                </div>
+                <div class="date">
+                    {{ letter[7]['year'] }}.{{ letter[7]['month'] }}.{{ letter[7]['day'] }}
+                </div>
+            </div>
+
+            <div class="align-right-wrapper">
+                <div class="letter-block-bottom-text-wrapper">
+                    <div class="letter-title">
+                        {{ letter[3] }}
+                    </div>
+                    <div class="letter-writer">
+                        {{ userIdToStudentId[letter[1]] }} {{ letter[2] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        </div>
+
+        <div onclick="location.href='/write'" id="write-button">
+            <div id="plus-text">
+                +
+            </div>
+        </div>
+
+    </body>
+</html>

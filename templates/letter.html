@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/letter.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    </head>
+    <body>
+        <div id="top-wrapper">
+            <div id="x-button" onclick="location.href='/'">
+                <img src="static/image/x_icon.png" width="43" height="40.3">
+            </div>
+            <div class="button-wrapper" onclick="
+                    if (confirm('정말 삭제하시겠습니까?')) {
+                        location.href='/delete?id={{ id }}'
+                    }">
+                <div class="button">
+                    <div class="button_text">
+                        삭제
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    사연 제목
+                </div>
+                <input value="{{ letterTitle }}" name="letter-title" disabled>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    신청곡 제목
+                </div>
+                <input value="{{ musicTitle }}" name="music-title" disabled>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    신청곡 가수
+                </div>
+                <input value="{{ singer }}" name="singer" disabled>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    사연 내용
+                </div>
+                <textarea name="letter-content" disabled>{{ letterContent }}</textarea>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    익명
+                </div>
+                {% if anonymous==1 %}
+                    <input class="radio-button" type="radio" id="anonymous-yes" name="anonymous" checked disabled>
+                    <label for="anonymous-yes">예</label>
+                    <input class="radio-button" type="radio" id="anonymous-no" name="anonymous" value="FALSE" disabled>
+                    <label for="anonymous-no">아니요</label>
+                {% else %}
+                    <input class="radio-button" type="radio" id="anonymous-yes" name="anonymous" disabled>
+                    <label for="anonymous-yes">예</label>
+                    <input class="radio-button" type="radio" id="anonymous-no" name="anonymous" value="FALSE" checked disabled>
+                    <label for="anonymous-no">아니요</label>
+                {% endif %}
+            </div>
+    </body>
+</html>

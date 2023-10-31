@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/write.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    </head>
+    <body>
+        <div id="top-wrapper">
+            <div id="x-button" onclick="location.href='/'">
+                <img src="static/image/x_icon.png" width="43" height="40.3">
+            </div>
+        </div>
+        <br>
+        <form method="post">
+
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    사연 제목
+                </div>
+                <input placeholder="사연 제목을 입력해주세요" name="letter-title" required>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    신청곡 제목
+                </div>
+                <input placeholder="신청곡 제목을 입력해주세요" name="music-title" required>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    신청곡 가수
+                </div>
+                <input placeholder="신청곡 가수를 입력해주세요" name="singer" required>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    사연 내용
+                </div>
+                <textarea placeholder="내용을 입력해주세요" name="letter-content" required></textarea>
+            </div>
+
+            <div class="input-block-wrapper">
+                <div class="title-text">
+                    익명
+                </div>
+                <input class="radio-button" type="radio" id="anonymous-yes" name="anonymous" value="TRUE" required>
+                <label for="anonymous-yes">예</label>
+                <input class="radio-button" type="radio" id="anonymous-no" name="anonymous" value="FALSE" required>
+                <label for="anonymous-no">아니요</label>
+            </div>
+
+            <div id="regist-button-wrapper">
+                <button id="regist_button">
+                    <div type="submit" id="regist_button_text">
+                        등록
+                    </div>
+                </button>
+            </div>
+
+
+        </form>
+    </body>
+</html>

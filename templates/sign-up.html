@@ -1,0 +1,65 @@
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{ messages[-1] }}")
+        </script>
+    {% endif %}
+{% endwith %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/sign-up.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="title">
+            회원가입
+        </div>
+        <form method="post">
+        <div class="input-box">
+            <div class="input-text-wrapper">
+                <input id="id" placeholder="아이디" name="userId">
+            </div>
+            <hr class="line">
+            <div class="input-text-wrapper">
+                <input id="password" placeholder="비밀번호" name="password">
+            </div>
+        </div>
+        <div class="warning">
+            *필수 정보입니다.
+        </div>
+
+        <div class="input-box">
+            <div class="input-text-wrapper">
+                <input id="birthday" placeholder="생년월일 8자리" name="birthday">
+            </div>
+            <hr class="line">
+            <div class="input-text-wrapper">
+                <input id="phone-number" placeholder="휴대전화번호" name="phoneNum">
+            </div>
+        </div>
+        <div class="warning">
+            *필수 정보입니다.
+        </div>
+
+        <div class="input-box">
+            <div class="input-text-wrapper">
+                <input id="student-id" placeholder="학번" name="studentId">
+            </div>
+            <hr class="line">
+            <div class="input-text-wrapper">
+                <input id="name" placeholder="이름" name="name">
+            </div>
+        </div>
+        <div class="warning">
+            *필수 정보입니다.
+        </div>
+
+        <div id="request-button-wrapper">
+            <input id="request-button" type="submit" value="가입요청">
+        </div>
+        </form>
+    </body>
+</html>
