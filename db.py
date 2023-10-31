@@ -20,7 +20,7 @@ def executeInsertSQL(sql):
         db.commit()
         returnValue = True
         print("INSERT 퀴리 실행 완료")
-    except pymysql.IntegrityError as e:
+    except Exception as e:
         print(f"""에러 코드: {e.args[0]}""")
         print(f"""에러 메세지: {e.args[1]}""")
     finally:
