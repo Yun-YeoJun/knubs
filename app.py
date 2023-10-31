@@ -47,7 +47,9 @@ def sign_up():
     if request.method == 'GET':
         return render_template("sign-up.html")
     else:
-        signUpSuccess = signUp(request.form.to_dict(), bcrypt)
+        dic = request.form.to_dict()
+
+        signUpSuccess = signUp(dic, bcrypt)
 
         if signUpSuccess:
             flash("회원가입이 완료되었습니다. 로그인 해주세요.")
@@ -248,4 +250,4 @@ def cancelMemberAccount():
         return redirect('/user-list')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
