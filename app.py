@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash, session, escape
+from flask import Flask, render_template, request, redirect, flash, session
 from signUp import *
 from flask_bcrypt import Bcrypt
 from login import checkUser, getUserInfo
