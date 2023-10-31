@@ -8,9 +8,13 @@ from user import *
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = '!!KNUBSSECRETKEY!!'
+f = open("key.txt", 'r')
+key = f.readline()
+f.close()
+
+app.config['SECRET_KEY'] = key
 app.config['BCRYPT_LEVEL'] = 10
-app.secret_key = '!!KNUBSSECRETKEY!!'
+app.secret_key = key
 
 bcrypt = Bcrypt(app)
 
